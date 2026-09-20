@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referenzen | IBO Group AG</title>
+    <meta name="description" content="Entdecken Sie unsere erfolgreich abgeschlossenen Bauprojekte, Einfamilienhäuser und Mehrfamilienhäuser in der Ostschweiz.">
+    
+    <link rel="icon" type="image/png" href="assets/favicon_V1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'ibo-red': '#D91604', 'ibo-dark': '#111111', 'ibo-gray': '#f4f4f5', 'ibo-light': '#ffffff' },
+                    fontFamily: { heading: ['"Archivo Black"', 'sans-serif'], body: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #111111; }
+        h1, h2, h3, h4, h5, h6, .font-heading { font-family: '"Archivo Black"', sans-serif; text-transform: uppercase; letter-spacing: -0.02em; }
+        .sharp { border-radius: 0 !important; }
+        .red-accent-line { width: 80px; height: 6px; background-color: #D91604; margin-bottom: 1.5rem; }
+        .btn-primary { background-color: #D91604; color: white; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: #111111; }
+        
+        .swiper-slide { width: auto; }
+        #project-modal { transition: opacity 0.4s ease, visibility 0.4s ease; }
+        #project-modal.open { opacity: 1; visibility: visible; }
+        #project-modal:not(.open) { opacity: 0; visibility: hidden; pointer-events: none; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <div class="h-2 w-full bg-ibo-red"></div>
+
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <img src="assets/logo_v1.png" alt="IBO Group Logo" class="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.src='https://placehold.co/200x80/111111/ffffff?text=IBO+GROUP'">
+                </a>
+                
+                <nav class="hidden md:flex space-x-10">
+                    <a href="index.html" class="text-gray-500 hover:text-ibo-red py-2 text-sm font-semibold tracking-wider uppercase transition-colors">Startseite</a>
+                    <a href="unternehmen.html" class="text-gray-500 hover:text-ibo-red py-2 text-sm font-semibold tracking-wider uppercase transition-colors">Unternehmen</a>
+                    <a href="leistungen.html" class="text-gray-500 hover:text-ibo-red py-2 text-sm font-semibold tracking-wider uppercase transition-colors">Leistungen</a>
+                    <a href="referenzen.html" class="text-ibo-red hover:text-ibo-red py-2 text-sm font-semibold tracking-wider uppercase transition-colors">Referenzen</a>
+                    <a href="kontakt.html" class="text-gray-500 hover:text-ibo-red py-2 text-sm font-semibold tracking-wider uppercase transition-colors">Kontakt</a>
+                </nav>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-ibo-dark hover:text-ibo-red focus:outline-none transition-colors">
+                        <i data-lucide="menu" class="h-8 w-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-ibo-gray border-t border-gray-200">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html" class="block py-3 text-base font-semibold text-gray-600 hover:text-ibo-red uppercase border-b border-gray-300">Startseite</a>
+                <a href="unternehmen.html" class="block py-3 text-base font-semibold text-gray-600 hover:text-ibo-red uppercase border-b border-gray-300">Unternehmen</a>
+                <a href="leistungen.html" class="block py-3 text-base font-semibold text-gray-600 hover:text-ibo-red uppercase border-b border-gray-300">Leistungen</a>
+                <a href="referenzen.html" class="block py-3 text-base font-semibold text-ibo-red uppercase border-b border-gray-300">Referenzen</a>
+                <a href="kontakt.html" class="block py-3 text-base font-semibold text-gray-600 hover:text-ibo-red uppercase">Kontakt</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="bg-ibo-dark py-20 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-5xl md:text-6xl text-white">REFERENZEN</h1>
+                <p class="mt-4 text-gray-300 uppercase tracking-widest font-semibold">Taten statt Worte</p>
+            </div>
+        </section>
+        
+        <section class="py-16 bg-white overflow-hidden">
+            <!-- Zeile 1: Mehrfamilienhäuser (MFH) -->
+            <div class="mb-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+                    <div class="red-accent-line"></div>
+                    <h2 class="text-3xl text-ibo-dark">MEHRFAMILIENHÄUSER (MFH)</h2>
+                </div>
+                <div class="swiper mfh-swiper max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 !overflow-visible">
+                    <div class="swiper-wrapper" id="mfh-gallery">
+                        <!-- JS generiert -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zeile 2: Einfamilienhäuser (EFH) -->
+            <div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+                    <div class="red-accent-line"></div>
+                    <h2 class="text-3xl text-ibo-dark">EINFAMILIENHÄUSER (EFH)</h2>
+                </div>
+                <div class="swiper efh-swiper max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 !overflow-visible">
+                    <div class="swiper-wrapper" id="efh-gallery">
+                        <!-- JS generiert -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="project-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm overflow-y-auto flex items-start justify-center pt-10 pb-20 px-4 md:px-10">
+            <div class="relative w-full max-w-5xl bg-white sharp shadow-2xl mt-4 md:mt-10 p-6 md:p-12 mb-20">
+                <button onclick="closeProjectModal()" class="absolute top-4 right-4 md:top-8 md:right-8 text-gray-400 hover:text-ibo-red transition-colors bg-gray-100 p-2 sharp z-50">
+                    <i data-lucide="x" class="w-6 h-6 md:w-8 md:h-8"></i>
+                </button>
+                <div id="modal-content">
+                    <!-- Wird dynamisch befüllt -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[100] bg-ibo-dark border-t-4 border-ibo-red transform translate-y-full transition-transform duration-700 ease-out shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-white text-sm md:text-base pr-0 md:pr-10">
+                <h4 class="font-heading text-lg mb-2 text-white">WIR VERWENDEN COOKIES</h4>
+                <p class="text-gray-300">Wir nutzen Cookies, um unsere Website für Sie optimal zu gestalten und statistische Auswertungen vorzunehmen. Weitere Informationen finden Sie im <a href="datenschutz.html" class="text-ibo-red hover:underline font-bold">Datenschutz</a>.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row flex-shrink-0 gap-4 w-full md:w-auto">
+                <button onclick="acceptCookies()" class="w-full md:w-auto bg-transparent border-2 border-white text-white hover:bg-white hover:text-ibo-dark font-heading px-6 py-3 uppercase tracking-wider text-sm sharp transition-colors">Nur Notwendige</button>
+                <button onclick="acceptCookies()" class="w-full md:w-auto btn-primary font-heading px-6 py-3 uppercase tracking-wider text-sm sharp">Alle Akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-ibo-dark text-white pt-16 pb-8 border-t-4 border-ibo-red">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <img src="assets/logo_v1.png" alt="IBO Group Logo" class="h-16 md:h-20 w-auto object-contain mb-6" onerror="this.src='https://placehold.co/200x80/111111/ffffff?text=IBO+GROUP'">
+                    <p class="text-gray-400 font-light">Ihr zuverlässiger Partner für Hochbau, Tiefbau und Umbauten in der Ostschweiz.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading text-lg mb-6">NAVIGATION</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="unternehmen.html" class="hover:text-ibo-red transition-colors">Unternehmen</a></li>
+                        <li><a href="leistungen.html" class="hover:text-ibo-red transition-colors">Leistungen</a></li>
+                        <li><a href="referenzen.html" class="hover:text-ibo-red transition-colors">Referenzen</a></li>
+                        <li><a href="kontakt.html" class="hover:text-ibo-red transition-colors">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading text-lg mb-6">KONTAKT</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="space-y-3 text-gray-400">IBO Group AG</li>
+                        <li><a href="https://maps.google.com/?q=Bahnhofstrasse+44,+8580+Amriswil" target="_blank" rel="noopener noreferrer" class="hover:text-ibo-red transition-colors">Bahnhofstrasse 44, 8580 Amriswil</a></li>
+                        <li><a href="tel:+41715588185" class="hover:text-ibo-red transition-colors">Tel: 071 558 81 85</a></li>
+                        <li><a href="mailto:info@ibogroup.ch" class="hover:text-ibo-red transition-colors">info@ibogroup.ch</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-6">
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/Bauunternehmun" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-ibo-red text-white flex items-center justify-center sharp hover:bg-white hover:text-ibo-red transition-colors shadow-sm"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="https://www.instagram.com/ibogroup_ag/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-ibo-red text-white flex items-center justify-center sharp hover:bg-white hover:text-ibo-red transition-colors shadow-sm"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    <a href="https://www.tiktok.com/@ibogroup_ag" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-ibo-red text-white flex items-center justify-center sharp hover:bg-white hover:text-ibo-red transition-colors shadow-sm"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
+                    <a href="https://www.linkedin.com/search/results/all/?keywords=IBRAIMI+ARAFAT+Ibo+Group+Ag" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-ibo-red text-white flex items-center justify-center sharp hover:bg-white hover:text-ibo-red transition-colors shadow-sm"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+                <p class="text-center md:text-left">&copy; 2026 IBO Group AG. Alle Rechte vorbehalten.</p>
+                <div class="space-x-4 mt-4 md:mt-0">
+                    <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('mobile-menu-button').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            const banner = document.getElementById('cookie-banner');
+            if (banner && !localStorage.getItem('cookiesAccepted')) { setTimeout(() => { banner.classList.remove('translate-y-full'); }, 1500); }
+        });
+        function acceptCookies() {
+            const banner = document.getElementById('cookie-banner');
+            if (banner) banner.classList.add('translate-y-full');
+            localStorage.setItem('cookiesAccepted', 'true');
+        }
+
+        const projectsData = {
+            'mfh-1': {
+                title: 'MFH Sonnenhang', location: 'Amriswil, TG', year: '2025', type: 'Neubau / Hochbau',
+                description: 'Neubau eines modernen Mehrfamilienhauses mit 8 Wohneinheiten, Tiefgarage und hohem Ausbaustandard in Hanglage.',
+                images: ['assets/projekt_mfh1_1.png', 'assets/projekt_mfh1_2.png', 'assets/projekt_mfh1_3.png', 'assets/projekt_mfh1_4.png', 'assets/projekt_mfh1_5.png']
+            },
+            'mfh-2': {
+                title: 'Überbauung Weitblick', location: 'Romanshorn, TG', year: '2024', type: 'Neubau',
+                description: 'Komplex aus drei Mehrfamilienhäusern mit gemeinsamer unterirdischer Einstellhalle und modernster Fassadentechnik.',
+                images: ['assets/projekt_mfh2_1.png', 'assets/projekt_mfh2_2.png', 'assets/projekt_mfh2_3.png', 'assets/projekt_mfh2_4.png', 'assets/projekt_mfh2_5.png']
+            },
+            'mfh-3': {
+                title: 'MFH Stadtzentrum', location: 'St. Gallen, SG', year: '2023', type: 'Umbau / Sanierung',
+                description: 'Kernsanierung eines historischen Mehrfamilienhauses im Herzen von St. Gallen. Komplette Erneuerung der Statik.',
+                images: ['assets/projekt_mfh3_1.png', 'assets/projekt_mfh3_2.png', 'assets/projekt_mfh3_3.png', 'assets/projekt_mfh3_4.png', 'assets/projekt_mfh3_5.png']
+            },
+            'efh-1': {
+                title: 'Villa Seeblick', location: 'Arbon, TG', year: '2025', type: 'Neubau / Architektenhaus',
+                description: 'Luxuriöses Einfamilienhaus in Massivbauweise mit imposanten Sichtbeton-Elementen und hochwertiger Ausführung.',
+                images: ['assets/projekt_efh1_1.png', 'assets/projekt_efh1_2.png', 'assets/projekt_efh1_3.png', 'assets/projekt_efh1_4.png', 'assets/projekt_efh1_5.png']
+            },
+            'efh-2': {
+                title: 'EFH Waldrand', location: 'Bischofszell, TG', year: '2024', type: 'Neubau',
+                description: 'Modernes Familienheim mit grosszügigem Aussenbereich und umweltfreundlicher Bauweise.',
+                images: ['assets/projekt_efh2_1.png', 'assets/projekt_efh2_2.png', 'assets/projekt_efh2_3.png', 'assets/projekt_efh2_4.png', 'assets/projekt_efh2_5.png']
+            },
+            'efh-3': {
+                title: 'Landhaus Erneuerung', location: 'Sulgen, TG', year: '2023', type: 'Umbau / Anbau',
+                description: 'Aufwendige Sanierung eines bestehenden Einfamilienhauses inklusive modernem Anbau.',
+                images: ['assets/projekt_efh3_1.png', 'assets/projekt_efh3_2.png', 'assets/projekt_efh3_3.png', 'assets/projekt_efh3_4.png', 'assets/projekt_efh3_5.png']
+            }
+        };
+
+        function createGalleryItem(id, data) {
+            return `
+                <div class="swiper-slide w-[300px] md:w-[400px] group cursor-pointer" onclick="openProjectModal('${id}')">
+                    <div class="relative overflow-hidden aspect-[4/3] bg-ibo-gray sharp mb-4">
+                        <img src="${data.images[0]}" alt="${data.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/800x600/f4f4f5/111111?text=Bild+fehlt'">
+                        <div class="absolute inset-0 bg-ibo-red/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                            <span class="text-white text-sm font-heading uppercase tracking-wider flex items-center border-2 border-white px-4 py-2">
+                                <i data-lucide="eye" class="w-5 h-5 mr-2"></i> Projekt ansehen
+                            </span>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl text-ibo-dark group-hover:text-ibo-red transition-colors font-heading truncate">${data.title}</h3>
+                    <p class="text-sm text-gray-500 flex justify-between mt-1">
+                        <span class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-1"></i> ${data.location}</span>
+                        <span class="font-bold">${data.year}</span>
+                    </p>
+                </div>
+            `;
+        }
+
+        const mfhGallery = document.getElementById('mfh-gallery');
+        const efhGallery = document.getElementById('efh-gallery');
+        let mfhHtml = ''; let efhHtml = '';
+
+        Object.entries(projectsData).forEach(([id, data]) => {
+            if (id.startsWith('mfh')) mfhHtml += createGalleryItem(id, data);
+            if (id.startsWith('efh')) efhHtml += createGalleryItem(id, data);
+        });
+
+        mfhGallery.innerHTML = mfhHtml + mfhHtml;
+        efhGallery.innerHTML = efhHtml + efhHtml;
+
+        new Swiper('.mfh-swiper', { loop: true, slidesPerView: 'auto', spaceBetween: 32, grabCursor: true, autoplay: { delay: 2500, disableOnInteraction: false }, speed: 800 });
+        new Swiper('.efh-swiper', { loop: true, slidesPerView: 'auto', spaceBetween: 32, grabCursor: true, autoplay: { delay: 2500, disableOnInteraction: false, reverseDirection: true }, speed: 800 });
+
+        const projectModal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        function openProjectModal(id) {
+            const project = projectsData[id];
+            if (!project) return;
+            const wildClasses = [
+                'col-span-2 row-span-2 transform -rotate-1 z-10 hover:scale-105 hover:rotate-0 hover:z-20 transition-all duration-500 shadow-xl border-8 border-white', 
+                'transform rotate-2 translate-y-4 hover:scale-105 hover:rotate-0 hover:z-20 transition-all duration-500 shadow-lg border-8 border-white', 
+                'transform -rotate-2 -translate-y-2 hover:scale-105 hover:rotate-0 hover:z-20 transition-all duration-500 shadow-md border-8 border-white', 
+                'col-span-2 transform rotate-1 translate-x-2 hover:scale-105 hover:rotate-0 hover:z-20 transition-all duration-500 shadow-xl border-8 border-white', 
+                'transform -rotate-3 hover:scale-105 hover:rotate-0 hover:z-20 transition-all duration-500 shadow-lg border-8 border-white'
+            ];
+
+            let imagesHtml = '';
+            project.images.forEach((img, index) => {
+                if (index < 5) {
+                    const cssClass = wildClasses[index % wildClasses.length];
+                    imagesHtml += `<img src="${img}" class="w-full h-full object-cover sharp ${cssClass}" style="min-height: 250px;" onerror="this.src='https://placehold.co/800x600/f4f4f5/111111?text=Bild'">`;
+                }
+            });
+
+            modalContent.innerHTML = `
+                <div class="mb-10 relative z-30 bg-white p-4">
+                    <div class="red-accent-line"></div>
+                    <h2 class="text-4xl md:text-5xl text-ibo-dark font-heading mb-4">${project.title}</h2>
+                    <div class="flex flex-wrap gap-6 text-sm md:text-base text-gray-600 mb-6">
+                        <span class="flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-2 text-ibo-red"></i> ${project.location}</span>
+                        <span class="flex items-center"><i data-lucide="calendar" class="w-5 h-5 mr-2 text-ibo-red"></i> Baujahr: ${project.year}</span>
+                        <span class="flex items-center"><i data-lucide="building" class="w-5 h-5 mr-2 text-gray-400"></i> ${project.type}</span>
+                    </div>
+                    <p class="text-gray-600 text-lg md:text-xl max-w-4xl leading-relaxed">${project.description}</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 auto-rows-[250px] relative z-10 pt-4">
+                    ${imagesHtml}
+                </div>
+            `;
+            lucide.createIcons();
+            projectModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() { projectModal.classList.remove('open'); document.body.style.overflow = 'auto'; }
+        projectModal.addEventListener('click', (e) => { if (e.target === projectModal) closeProjectModal(); });
+    </script>
+</body>
+</html>
