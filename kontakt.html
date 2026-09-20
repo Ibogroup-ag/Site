@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | IBO Group AG</title>
+    <meta name="description" content="Kontaktieren Sie die IBO Group AG für Ihre Bauvorhaben. Telefon, E-Mail und Kontaktformular.">
+    
+    <link rel="icon" type="image/png" href="assets/favicon_V1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'ibo-red': '#D91604', 'ibo-dark': '#111111', 'ibo-gray': '#f4f4f5', 'ibo-light': '#ffffff' },
+                    fontFamily: { heading: ['"Archivo Black"', 'sans-serif'], body: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #111111; }
+        h1, h2, h3, h4, h5, h6, .font-heading { font-family: '"Archivo Black"', sans-serif; text-transform: uppercase; letter-spacing: -0.02em; }
+        .sharp { border-radius: 0 !important; }
+        .red-accent-line { width: 80px; height: 6px; background-color: #D91604; margin-bottom: 1.5rem; }
+        .btn-primary { background-color: #D91604; color: white; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: #111111; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <div class="h-2 w-full bg-ibo-red"></div>
+
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <img src="assets/logo_v1.png" alt="IBO Group Logo" class="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.src='https://placehold.co/200x80/111111/ffffff?text=IBO+GROUP'">
+                </a>
+                
+                <nav class="hidden md:flex space-x-10">
+                    <a href="index.html" class="text-gray-500 hover:text-ibo-red py-2 text-sm font-semibold tracking-wider uppercase transition-colors">Startseite</a>
+                    <a href="unternehmen.html" class="text-gray-500 hover:text-ibo-red py-2 text-sm font-semibold tracking-wider uppercase transition-colors">Unternehmen</a>
+                    <a href="leistungen.html" class="text-gray-500 hover:text-ibo-red py-2 text-sm font-semibold tracking-wider uppercase transition-colors">Leistungen</a>
+                    <a href="referenzen.html" class="text-gray-500 hover:text-ibo-red py-2 text-sm font-semibold tracking-wider uppercase transition-colors">Referenzen</a>
+                    <a href="kontakt.html" class="text-ibo-red hover:text-ibo-red py-2 text-sm font-semibold tracking-wider uppercase transition-colors">Kontakt</a>
+                </nav>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-ibo-dark hover:text-ibo-red focus:outline-none transition-colors">
+                        <i data-lucide="menu" class="h-8 w-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-ibo-gray border-t border-gray-200">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html" class="block py-3 text-base font-semibold text-gray-600 hover:text-ibo-red uppercase border-b border-gray-300">Startseite</a>
+                <a href="unternehmen.html" class="block py-3 text-base font-semibold text-gray-600 hover:text-ibo-red uppercase border-b border-gray-300">Unternehmen</a>
+                <a href="leistungen.html" class="block py-3 text-base font-semibold text-gray-600 hover:text-ibo-red uppercase border-b border-gray-300">Leistungen</a>
+                <a href="referenzen.html" class="block py-3 text-base font-semibold text-gray-600 hover:text-ibo-red uppercase border-b border-gray-300">Referenzen</a>
+                <a href="kontakt.html" class="block py-3 text-base font-semibold text-ibo-red uppercase">Kontakt</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="bg-ibo-dark py-20 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-5xl md:text-6xl text-white">KONTAKT</h1>
+                <p class="mt-4 text-gray-400 uppercase tracking-widest font-semibold">Wir freuen uns auf Ihre Anfrage</p>
+            </div>
+        </section>
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-16">
+                <div class="w-full md:w-1/3">
+                    <div class="red-accent-line"></div>
+                    <h2 class="text-3xl text-ibo-dark mb-8">IBO GROUP AG</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-ibo-red mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-bold text-ibo-dark">Adresse</p>
+                                <p class="text-gray-600">Weinfelderstrasse 54<br>8580 Amriswil</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-lucide="phone" class="w-6 h-6 text-ibo-red mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-bold text-ibo-dark">Telefon</p>
+                                <p class="text-gray-600">071 558 81 85</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-lucide="mail" class="w-6 h-6 text-ibo-red mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-bold text-ibo-dark">E-Mail</p>
+                                <p class="text-gray-600">info@ibogroup.ch</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-2/3 bg-ibo-gray p-8 md:p-12 sharp">
+                    <form action="https://formsubmit.co/info@ibogroup.ch" method="POST" class="space-y-6">
+                        <input type="hidden" name="_subject" value="Neue Kontaktanfrage über die Webseite">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="true">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="fname" class="block text-sm font-bold text-ibo-dark mb-2 uppercase">Vorname</label>
+                                <input type="text" id="fname" name="Vorname" required class="w-full p-4 border border-gray-300 sharp focus:outline-none focus:border-ibo-red bg-white">
+                            </div>
+                            <div>
+                                <label for="lname" class="block text-sm font-bold text-ibo-dark mb-2 uppercase">Nachname</label>
+                                <input type="text" id="lname" name="Nachname" required class="w-full p-4 border border-gray-300 sharp focus:outline-none focus:border-ibo-red bg-white">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-bold text-ibo-dark mb-2 uppercase">E-Mail</label>
+                            <input type="email" id="email" name="Email" required class="w-full p-4 border border-gray-300 sharp focus:outline-none focus:border-ibo-red bg-white">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-bold text-ibo-dark mb-2 uppercase">Nachricht</label>
+                            <textarea id="message" name="Nachricht" rows="4" required class="w-full p-4 border border-gray-300 sharp focus:outline-none focus:border-ibo-red bg-white"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary font-heading px-8 py-4 uppercase tracking-wider text-sm sharp w-full md:w-auto">
+                            Nachricht senden
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[100] bg-ibo-dark border-t-4 border-ibo-red transform translate-y-full transition-transform duration-700 ease-out shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-white text-sm md:text-base pr-0 md:pr-10">
+                <h4 class="font-heading text-lg mb-2 text-white">WIR VERWENDEN COOKIES</h4>
+                <p class="text-gray-300">Wir nutzen Cookies, um unsere Website für Sie optimal zu gestalten und statistische Auswertungen vorzunehmen. Weitere Informationen finden Sie im <a href="datenschutz.html" class="text-ibo-red hover:underline font-bold">Datenschutz</a>.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row flex-shrink-0 gap-4 w-full md:w-auto">
+                <button onclick="acceptCookies()" class="w-full md:w-auto bg-transparent border-2 border-white text-white hover:bg-white hover:text-ibo-dark font-heading px-6 py-3 uppercase tracking-wider text-sm sharp transition-colors">Nur Notwendige</button>
+                <button onclick="acceptCookies()" class="w-full md:w-auto btn-primary font-heading px-6 py-3 uppercase tracking-wider text-sm sharp">Alle Akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-ibo-dark text-white pt-16 pb-8 border-t-4 border-ibo-red">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <img src="assets/logo_v1.png" alt="IBO Group Logo" class="h-16 md:h-20 w-auto object-contain mb-6" onerror="this.src='https://placehold.co/200x80/111111/ffffff?text=IBO+GROUP'">
+                    <p class="text-gray-400 font-light">Ihr zuverlässiger Partner für Hochbau, Tiefbau und Umbauten in der Ostschweiz.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading text-lg mb-6">NAVIGATION</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="unternehmen.html" class="hover:text-ibo-red transition-colors">Unternehmen</a></li>
+                        <li><a href="leistungen.html" class="hover:text-ibo-red transition-colors">Leistungen</a></li>
+                        <li><a href="referenzen.html" class="hover:text-ibo-red transition-colors">Referenzen</a></li>
+                        <li><a href="kontakt.html" class="hover:text-ibo-red transition-colors">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading text-lg mb-6">KONTAKT</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="space-y-3 text-gray-400">IBO Group AG</li>
+                        <li><a href="https://maps.google.com/?q=Bahnhofstrasse+44,+8580+Amriswil" target="_blank" rel="noopener noreferrer" class="hover:text-ibo-red transition-colors">Bahnhofstrasse 44, 8580 Amriswil</a></li>
+                        <li><a href="tel:+41715588185" class="hover:text-ibo-red transition-colors">Tel: 071 558 81 85</a></li>
+                        <li><a href="mailto:info@ibogroup.ch" class="hover:text-ibo-red transition-colors">info@ibogroup.ch</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-6">
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/Bauunternehmun" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-ibo-red text-white flex items-center justify-center sharp hover:bg-white hover:text-ibo-red transition-colors shadow-sm"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="https://www.instagram.com/ibogroup_ag/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-ibo-red text-white flex items-center justify-center sharp hover:bg-white hover:text-ibo-red transition-colors shadow-sm"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    <a href="https://www.tiktok.com/@ibogroup_ag" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-ibo-red text-white flex items-center justify-center sharp hover:bg-white hover:text-ibo-red transition-colors shadow-sm"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
+                    <a href="https://www.linkedin.com/search/results/all/?keywords=IBRAIMI+ARAFAT+Ibo+Group+Ag" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-ibo-red text-white flex items-center justify-center sharp hover:bg-white hover:text-ibo-red transition-colors shadow-sm"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+                <p class="text-center md:text-left">&copy; 2026 IBO Group AG. Alle Rechte vorbehalten.</p>
+                <div class="space-x-4 mt-4 md:mt-0">
+                    <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
+                    <a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        lucide.createIcons();
+        document.getElementById('mobile-menu-button').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+        window.addEventListener('DOMContentLoaded', () => {
+            const banner = document.getElementById('cookie-banner');
+            if (banner && !localStorage.getItem('cookiesAccepted')) { setTimeout(() => { banner.classList.remove('translate-y-full'); }, 1500); }
+        });
+        function acceptCookies() {
+            const banner = document.getElementById('cookie-banner');
+            if (banner) banner.classList.add('translate-y-full');
+            localStorage.setItem('cookiesAccepted', 'true');
+        }
+    </script>
+</body>
+</html>
